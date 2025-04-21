@@ -13,7 +13,7 @@ body:
       value: |
         # ☕ Thanks for helping us brew better code! ☕
         
-         ![Coffee Banner](/assets/Coffee.png)
+        ![Coffee Banner](https://raw.githubusercontent.com/neo-devops-ws/CoffeeShop/main/.github/assets/Coffee.png)
         
         Your ideas help make our coffee shop experience smoother and more delightful.
         Before submitting, please check that this feature hasn't been suggested before.
