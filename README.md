@@ -1,6 +1,6 @@
 # ☕ CoffeeShop: GitHub Learning in 3 Days
 
-A hands-on project to master GitHub's developer productivity ecosystem while building a coffee shop API, all within GitHub Codespaces.
+A hands-on project to master GitHub's developer productivity ecosystem while building a coffee shop API, all within the GitHub ecosystem.
 
 ## 🎯 Overview
 
