@@ -1,0 +1,184 @@
+name: "☕ New Coffee Shop Feature"
+description: "Brew up a fresh idea to enhance our Coffee Shop experience"
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage", "user-experience"]
+projects: ["CoffeeShop/Roadmap"]
+assignees:
+  - barista-lead
+  - tech-manager
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # ☕ Thanks for helping us brew better code! ☕
+        
+        ![Coffee Banner](https://raw.githubusercontent.com/username/CoffeeShop/main/.github/assets/coffee-banner.png)
+        
+        Your ideas help make our coffee shop experience smoother and more delightful.
+        Before submitting, please check that this feature hasn't been suggested before.
+        
+  - type: dropdown
+    id: feature-category
+    attributes:
+      label: "Feature Category"
+      description: "What aspect of our coffee shop does this feature enhance?"
+      multiple: false
+      options:
+        - "🧋 Customer Ordering Experience"
+        - "📦 Inventory Management"
+        - "👩‍🍳 Barista Workflow"
+        - "💳 Payment Processing"
+        - "⭐ Loyalty Program"
+        - "📱 Mobile App"
+        - "🧠 AI/ML Recommendations"
+        - "📊 Analytics & Reporting"
+        - "🔒 Security & Compliance"
+        - "🌱 Sustainability Features"
+        - "🚚 Delivery Integration"
+        - "⚙️ Backend Infrastructure"
+        - "🔄 Other (please specify in description)"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: feature-summary
+    attributes:
+      label: "Feature Summary"
+      description: "Provide a concise summary of your feature idea"
+      placeholder: "A single-sentence pitch for your feature"
+      value: "As a [type of user], I want to [action/capability] so that [benefit]."
+    validations:
+      required: true
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: "Detailed Description"
+      description: "Tell us everything about your feature idea in detail"
+      placeholder: "What should it do? How should it work? Why is it valuable?"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: user-stories
+    attributes:
+      label: "User Stories/Use Cases"
+      description: "Describe specific scenarios where this feature would be used"
+      placeholder: |
+        **Use Case 1:** A customer wants to...
+        **Use Case 2:** A barista needs to...
+      render: markdown
+      
+  - type: textarea
+    id: mockups
+    attributes:
+      label: "Mockups or Visual References"
+      description: "Drop any sketches, mockups, or reference images that help explain your idea"
+      placeholder: "Drag and drop images here, or describe the UI/UX you envision"
+      
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Perceived Priority"
+      description: "How important do you think this feature is?"
+      options:
+        - "☕ Nice to Have (Flavor enhancement)"
+        - "☕☕ Important (Better brew)"
+        - "☕☕☕ Critical (Essential ingredient)"
+      default: 0
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: effort
+    attributes:
+      label: "Estimated Implementation Complexity"
+      description: "If you have technical knowledge, how complex do you think this would be to implement?"
+      options:
+        - "Simple (Like brewing a regular coffee)"
+        - "Moderate (Like making a cappuccino)"
+        - "Complex (Like creating latte art)"
+        - "Very Complex (Like roasting and grinding our own beans)"
+        - "Not sure (I'll leave that to the baristas)"
+      default: 4
+      
+  - type: dropdown
+    id: target-release
+    attributes:
+      label: "Target Release"
+      description: "When would you like to see this feature implemented?"
+      options:
+        - "v1.1 (Next Minor)"
+        - "v1.2 (Future Minor)"
+        - "v2.0 (Next Major)"
+        - "Future Roadmap"
+      default: 0
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: environments
+    attributes:
+      label: "Deployment Environments"
+      description: "Which environments would need this feature?"
+      multiple: true
+      options:
+        - "In-Store POS Systems"
+        - "Manager Dashboards"
+        - "Customer-Facing Mobile App"
+        - "Customer-Facing Web App"
+        - "Kitchen Display Systems"
+        - "All Environments"
+        
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: "Acceptance Criteria Categories"
+      description: "What aspects should we consider when implementing this feature?"
+      options:
+        - label: "Performance Impact (It shouldn't slow down our brewing)"
+          required: false
+        - label: "Security Considerations (Protects our secret recipes)"
+          required: false
+        - label: "Accessibility Requirements (Everyone deserves good coffee)"
+          required: false
+        - label: "Multi-language Support (Coffee is universal)"
+          required: false
+        - label: "Offline Capability (Coffee must flow even without internet)"
+          required: false
+        - label: "Analytics/Tracking (Measuring the perfect brew)"
+          required: false
+          
+  - type: input
+    id: contact
+    attributes:
+      label: "Contact Details"
+      description: "How can we reach you if we need more information? (optional)"
+      placeholder: "email@example.com"
+    validations:
+      required: false
+      
+  - type: markdown
+    attributes:
+      value: |
+        ## Next Steps
+        
+        After submission, our team will:
+        1. Review your suggestion within 3 business days
+        2. Add it to our planning discussion if it aligns with our roadmap
+        3. Provide updates via GitHub issue comments
+        
+        We appreciate your contribution to making our coffee shop experience even better! ☕
+        
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Agreements"
+      options:
+        - label: "I have searched for duplicate feature requests before submitting"
+          required: true
+        - label: "I understand this is a feature request and not a guarantee of implementation"
+          required: true
+        - label: "I agree to the [CoffeeShop Community Guidelines](https://example.com/community)"
+          required: true
