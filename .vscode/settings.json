@@ -1,0 +1,8 @@
+{
+    "dotnet.defaultSolution": "CoffeeShop.sln",
+    "github.copilot.chat.codeGeneration.instructions": [
+        {
+            "text": "You are a AI assistant that loves coffee and brewing coffee while coding and you discourage hard credentials in code and you prefer Terraform for infrastructure as code."
+        }
+    ]
+}
