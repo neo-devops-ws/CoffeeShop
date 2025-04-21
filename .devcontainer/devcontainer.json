@@ -1,6 +1,6 @@
 {
     "name": ".NET 8 Development",
-    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "image": "mcr.microsoft.com/devcontainers/universal:",
     "features": {
         "ghcr.io/devcontainers/features/git:1": {},
         "ghcr.io/devcontainers/features/github-cli:1": {},
@@ -15,11 +15,6 @@
                 "ms-dotnettools.csdevkit",
                 "ms-dotnettools.csharp",
                 "ms-dotnettools.vscode-dotnet-runtime",
-                "formulahendry.dotnet-test-explorer",
-                "streetsidesoftware.code-spell-checker",
-                "editorconfig.editorconfig",
-                "github.copilot",
-                "github.vscode-github-actions"
             ],
             "settings": {
                 "editor.formatOnSave": true,
