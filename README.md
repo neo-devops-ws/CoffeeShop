@@ -26,8 +26,5 @@ Learn GitHub end-to-end in three focused days using Codespaces from day one.
 - Security scanning and dependency management
 - Release versioning and management
 
-## 📁 Project Structure
-The repository contains all necessary components to build and deploy our coffee shop application.
-
 ---
 Happy Coding and Happy Brewing! ☕💻
