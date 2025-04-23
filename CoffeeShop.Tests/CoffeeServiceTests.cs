@@ -16,8 +16,7 @@ public class CoffeeServiceTests
     [Fact]
     public async Task GetAllCoffees_ReturnsAllCoffees()
     {
-        throw new NotImplementedException();
-        
+
         // Act
         var coffees = await _service.GetAllCoffeesAsync();
         
