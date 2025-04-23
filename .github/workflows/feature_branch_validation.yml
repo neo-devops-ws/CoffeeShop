@@ -1,0 +1,39 @@
+name: Feature Branch Validation
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read #This is required for actions/checkout
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.x'
+
+      - name: Build with dotnet
+        run: dotnet build --configuration Release
+
+      - name: dotnet publish
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      
+      # Optional: Run tests if you have any
+      - name: Run tests
+        run: dotnet test --no-build --configuration Release
+
+      # We keep the artifact creation for potential manual inspection, but no deployment
+      - name: Upload artifact for potential inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: .net-app
+          path: ${{env.DOTNET_ROOT}}/myapp
+          retention-days: 5  # Keep artifacts for a shorter time since they're just for validation
