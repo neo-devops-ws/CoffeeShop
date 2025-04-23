@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     permissions:
       contents: read #This is required for actions/checkout
@@ -26,14 +27,31 @@ jobs:
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
       
-      # Optional: Run tests if you have any
-      - name: Run tests
-        run: dotnet test --no-build --configuration Release
-
-      # We keep the artifact creation for potential manual inspection, but no deployment
-      - name: Upload artifact for potential inspection
+      - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: .net-app
+          name: build-output
           path: ${{env.DOTNET_ROOT}}/myapp
-          retention-days: 5  # Keep artifacts for a shorter time since they're just for validation
+          retention-days: 5
+
+  test:
+    name: Run Tests
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.x'
+
+      - name: Run tests
+        run: dotnet test --configuration Release
+        
+      - name: Download build artifacts for reference
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: ${{env.DOTNET_ROOT}}/myapp
