@@ -1,0 +1,176 @@
+name: "🪲 Coffee Shop Bug Report"
+description: "Report a bug or issue that's brewing trouble in our Coffee Shop"
+title: "Bug: "
+labels: ["bug", "needs-triage", "technical-issue"]
+projects: ["CoffeeShop/Bugs"]
+assignees:
+  - tech-manager
+  - debugging-barista
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🪲 Found a bug in our brew? Help us fix it! ☕
+        
+        We take pride in serving the perfect cup. If something's not right, we want to know!
+        Before submitting, please check if someone else has already reported this issue.
+        
+  - type: dropdown
+    id: coffee-type
+    attributes:
+      label: "Coffee Type Affected"
+      description: "Which coffee or product is experiencing the issue?"
+      multiple: false
+      options:
+        - "Espresso"
+        - "Cappuccino"
+        - "Latte"
+        - "Americano"
+        - "Cold Brew"
+        - "Mocha"
+        - "Frappuccino"
+        - "Tea-based drinks"
+        - "Non-coffee beverages"
+        - "Food items"
+        - "Multiple products"
+        - "System feature (non-product)"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: exception-description
+    attributes:
+      label: "Exception/Error Description"
+      description: "Provide details about the error or exception you encountered"
+      placeholder: "Include any error messages, stack traces, or exception details here"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: bug-summary
+    attributes:
+      label: "Bug Summary"
+      description: "Briefly describe what's wrong"
+      placeholder: "Briefly describe the issue you're experiencing"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: "Steps to Reproduce"
+      description: "How can we recreate this issue? Be specific and detailed"
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+      render: markdown
+    validations:
+      required: true
+      
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: "Expected Behavior"
+      description: "What did you expect to happen?"
+      placeholder: "Describe what you expected to happen"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: "Actual Behavior"
+      description: "What actually happened?"
+      placeholder: "Describe what actually happened instead"
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: bug-severity
+    attributes:
+      label: "Severity"
+      description: "How severe is this bug?"
+      options:
+        - "☕ Minor (Slightly bitter taste)"
+        - "☕☕ Moderate (Spilled coffee)"
+        - "☕☕☕ Major (Wrong order served)"
+        - "☕☕☕☕ Critical (Coffee machine broken)"
+      default: 0
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: environment
+    attributes:
+      label: "Where is this happening?"
+      description: "Select the environment(s) where you're experiencing the issue"
+      multiple: true
+      options:
+        - "In-Store POS Systems"
+        - "Manager Dashboards"
+        - "Customer-Facing Mobile App"
+        - "Customer-Facing Web App"
+        - "Kitchen Display Systems"
+        - "Self-Service Kiosk"
+    validations:
+      required: true
+      
+  - type: input
+    id: version
+    attributes:
+      label: "Version"
+      description: "What version of our software are you running?"
+      placeholder: "e.g. v1.0.2"
+    validations:
+      required: false
+      
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Screenshots or Videos"
+      description: "If applicable, add screenshots or videos to help explain your problem"
+      placeholder: "Drag and drop images or videos here"
+      
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional Context"
+      description: "Add any other context about the problem here"
+      placeholder: "Any other details that might help us fix the issue"
+      
+  - type: input
+    id: contact
+    attributes:
+      label: "Contact Details"
+      description: "How can we reach you if we need more information? (optional)"
+      placeholder: "email@example.com"
+    validations:
+      required: false
+      
+  - type: markdown
+    attributes:
+      value: |
+        ## Next Steps
+        
+        After submission, our team will:
+        1. Review your bug report within 1-2 business days
+        2. Attempt to reproduce the issue
+        3. Prioritize it in our backlog
+        4. Provide updates via GitHub issue comments
+        
+        We appreciate your help in making our coffee shop experience smooth and error-free! ☕
+        
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Confirmations"
+      options:
+        - label: "I have searched for similar bugs before reporting this issue"
+          required: true
+        - label: "I have included all the information needed to reproduce this bug"
+          required: true
+        - label: "I agree to the [CoffeeShop Community Guidelines](https://example.com/community)"
+          required: true
