@@ -23,26 +23,10 @@ builder.Services.AddSwaggerGen(c =>
 // Register services
 builder.Services.AddSingleton<ICoffeeService, InMemoryCoffeeService>();
 
-// CORS policy for dev environment
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("DevCorsPolicy", policy =>
-    {
-        policy.WithOrigins("http://localhost:5000", "https://localhost:5001")
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
-});
 
 var app = builder.Build();
-
-// Configure middleware pipeline
-if (app.Environment.IsDevelopment())
-{
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.UseCors("DevCorsPolicy");
-}
 
 app.UseHttpsRedirection();
 
