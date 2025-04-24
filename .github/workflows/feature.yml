@@ -64,4 +64,4 @@ jobs:
           app-name: 'coffeeshop-neo-alifarahnak'
           slot-name: 'dev'
           package: .
-          
+          startup-command: 'dotnet CoffeeShop.API.dll'
