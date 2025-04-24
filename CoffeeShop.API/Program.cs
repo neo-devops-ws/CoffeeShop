@@ -35,6 +35,9 @@ app.MapGet("/", () => "Welcome to the Coffee Shop API! Visit /swagger to explore
    .WithName("Home")
    .WithOpenApi();
 
+app.MapGet("/brew", () => Results.Ok("Coffee is brewing!"))
+   .WithOpenApi();
+
 // User signup
 app.MapPost("/signup", (User user) =>
 {
